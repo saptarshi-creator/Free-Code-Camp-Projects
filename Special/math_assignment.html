@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>BSC M201 Assignment Solutions</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-chtml.min.js"></script>
+<style>
+  :root {
+    --bg: #faf9f6;
+    --card: #ffffff;
+    --border: #e8e5de;
+    --accent: #2e4a7a;
+    --accent2: #1a7a5e;
+    --accent3: #7a2e4a;
+    --text: #1a1a1a;
+    --muted: #5a5a5a;
+    --highlight: #f0f4ff;
+    --highlight2: #f0fff8;
+    --tag-bg: #e8f0ff;
+    --tag-text: #1a3a7a;
+    --ans-bg: #eaf5ef;
+    --ans-border: #1a7a5e;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Georgia', serif;
+    background: var(--bg);
+    color: var(--text);
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+    font-size: 16px;
+    line-height: 1.75;
+  }
+  .cover {
+    text-align: center;
+    padding: 2.5rem 0 2rem;
+    border-bottom: 2px solid var(--border);
+    margin-bottom: 2.5rem;
+  }
+  .cover h1 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: var(--accent);
+    text-transform: uppercase;
+  }
+  .cover p { color: var(--muted); font-size: 0.95rem; margin-top: 0.4rem; }
+  .q-block {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.8rem 2rem;
+    margin-bottom: 2.2rem;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  }
+  .q-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .q-num {
+    background: var(--accent);
+    color: white;
+    font-size: 0.85rem;
+    font-weight: 700;
+    border-radius: 6px;
+    padding: 4px 10px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .q-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--accent);
+  }
+  .q-stmt {
+    font-style: italic;
+    font-size: 0.95rem;
+    color: var(--muted);
+    margin-bottom: 1rem;
+  }
+  .step {
+    margin-bottom: 1.2rem;
+  }
+  .step-label {
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    margin-bottom: 0.35rem;
+  }
+  .math-line {
+    padding: 0.6rem 1rem;
+    background: var(--highlight);
+    border-radius: 6px;
+    margin: 0.5rem 0;
+    overflow-x: auto;
+  }
+  .math-line.green { background: var(--highlight2); }
+  .ans-box {
+    background: var(--ans-bg);
+    border-left: 4px solid var(--ans-border);
+    border-radius: 0 8px 8px 0;
+    padding: 0.9rem 1.2rem;
+    margin-top: 1.2rem;
+  }
+  .ans-box .ans-label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--accent2);
+    margin-bottom: 0.3rem;
+  }
+  .note {
+    background: #fffbea;
+    border: 1px solid #eed;
+    border-radius: 6px;
+    padding: 0.6rem 0.9rem;
+    font-size: 0.9rem;
+    color: #6b5a00;
+    margin: 0.7rem 0;
+  }
+  .tag {
+    display: inline-block;
+    background: var(--tag-bg);
+    color: var(--tag-text);
+    font-size: 0.75rem;
+    font-weight: 700;
+    border-radius: 4px;
+    padding: 2px 8px;
+    margin-left: 0.5rem;
+    letter-spacing: 0.04em;
+  }
+  .sub-block {
+    background: #f8f8f8;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.2rem 1.4rem;
+    margin-bottom: 1.2rem;
+  }
+  .sub-title {
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--accent3);
+    margin-bottom: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  p { margin-bottom: 0.6rem; }
+  .check { color: var(--accent2); font-weight: 700; }
+  .cross { color: #c0392b; font-weight: 700; }
+  .divider { border: none; border-top: 1px dashed var(--border); margin: 1.2rem 0; }
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <h1>BSC – M201 &nbsp;|&nbsp; Assignment Solutions</h1>
+  <p>Paper Code: BSC M201 &nbsp;·&nbsp; ECE / CE / EE / AEIE</p>
+  <p style="margin-top:0.3rem">Complex Analysis &amp; Ordinary Differential Equations</p>
+</div>
+
+<!-- ════════════════════════════════════════════ Q1 ════ -->
+<div class="q-block">
+  <div class="q-header">
+    <span class="q-num">Q1</span>
+    <div>
+      <div class="q-title">Cauchy's Integral Formula &nbsp;<span class="tag">Complex Analysis</span></div>
+      <div class="q-stmt">Evaluate \(\displaystyle\oint_C \frac{\cos\pi z^2}{(z-1)(z-2)}\,dz\), where \(C\) is \(|z|=\tfrac{3}{2}\).</div>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-label">Step 1 — Identify &amp; Locate Singularities</div>
+    <p>The integrand has simple poles at \(z=1\) and \(z=2\).</p>
+    <p><span class="check">✔</span> \(|z=1|=1 < \tfrac{3}{2}\) → <strong>inside</strong> \(C\)</p>
+    <p><span class="cross">✘</span> \(|z=2|=2 > \tfrac{3}{2}\) → <strong>outside</strong> \(C\)</p>
+  </div>
+
+  <div class="step">
+    <div class="step-label">Step 2 — Apply Cauchy's Integral Formula</div>
+    <p>Write the integral with \(f(z)=\dfrac{\cos\pi z^2}{z-2}\), which is analytic inside \(C\):</p>
+    <div class="math-line">
+      \[\oint_C \frac{\cos\pi z^2}{(z-1)(z-2)}\,dz = \oint_C \frac{f(z)}{z-1}\,dz = 2\pi i\cdot f(1)\]
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-label">Step 3 — Evaluate</div>
+    <div class="math-line">
+      \[f(1) = \frac{\cos(\pi\cdot1^2)}{1-2} = \frac{\cos\pi}{-1} = \frac{-1}{-1} = 1\]
+    </div>
+  </div>
+
+  <div class="ans-box">
+    <div class="ans-label">Answer</div>
+    \[\oint_C \frac{\cos\pi z^2}{(z-1)(z-2)}\,dz = 2\pi i\]
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════ Q2 ════ -->
+<div class="q-block">
+  <div class="q-header">
+    <span class="q-num">Q2</span>
+    <div>
+      <div class="q-title">Residue Theorem &nbsp;<span class="tag">Complex Analysis</span></div>
+      <div class="q-stmt">Evaluate \(\displaystyle\oint_C \frac{z+4}{z^2+2z+5}\,dz\), where \(C\) is \(|z+1+i|=2\).</div>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-label">Step 1 — Find Poles</div>
+    <p>Solve \(z^2+2z+5=0\):</p>
+    <div class="math-line">
+      \[z = \frac{-2\pm\sqrt{4-20}}{2} = -1\pm 2i\]
+    </div>
+    <p>Poles: \(z_1=-1+2i\) and \(z_2=-1-2i\).</p>
+  </div>
+
+  <div class="step">
+    <div class="step-label">Step 2 — Locate Poles Relative to C (centre \(-1-i\), radius 2)</div>
+    <p><span class="cross">✘</span> \(|z_1-(-1-i)|=|{-1+2i+1+i}|=|3i|=3>2\) → <strong>outside</strong></p>
+    <p><span class="check">✔</span> \(|z_2-(-1-i)|=|{-1-2i+1+i}|=|-i|=1<2\) → <strong>inside</strong></p>
+  </div>
+
+  <div class="step">
+    <div class="step-label">Step 3 — Compute Residue at \(z_2=-1-2i\)</div>
+    <div class="math-line">
+      \[\text{Res}_{z_2} = \frac{z_2+4}{z_2-z_1} = \frac{(-1-2i)+4}{(-1-2i)-(-1+2i)} = \frac{3-2i}{-4i}\]
+    </div>
+    <p>Multiply numerator and denominator by \(i\):</p>
+    <div class="math-line">
+      \[\frac{(3-2i)\cdot i}{-4i^2} = \frac{3i-2i^2}{4} = \frac{3i+2}{4} = \frac{2+3i}{4}\]
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-label">Step 4 — Apply Residue Theorem</div>
+    <div class="math-line">
+      \[\oint_C = 2\pi i\cdot\frac{2+3i}{4} = \frac{\pi i(2+3i)}{2} = \frac{2\pi i + 3\pi i^2}{2} = \frac{-3\pi+2\pi i}{2}\]
+    </div>
+  </div>
+
+  <div class="ans-box">
+    <div class="ans-label">Answer</div>
+    \[\oint_C \frac{z+4}{z^2+2z+5}\,dz = \frac{\pi}{2}(-3+2i)\]
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════ Q3 ════ -->
+<div class="q-block">
+  <div class="q-header">
+    <span class="q-num">Q3</span>
+    <div>
+      <div class="q-title">Cauchy's Integral Formula &nbsp;<span class="tag">Complex Analysis</span></div>
+      <div class="q-stmt">Evaluate \(\displaystyle\oint_C \frac{z^3}{2z-1}\,dz\), where \(C\) is \(|z|=1\).</div>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-label">Step 1 — Rewrite</div>
+    <div class="math-line">
+      \[\frac{z^3}{2z-1} = \frac{z^3}{2\!\left(z-\tfrac{1}{2}\right)} = \frac{1}{2}\cdot\frac{z^3}{z-\tfrac{1}{2}}\]
+    </div>
+    <p>Pole at \(z_0=\tfrac{1}{2}\); since \(\bigl|\tfrac{1}{2}\bigr|=\tfrac{1}{2}<1\), it lies <strong>inside</strong> \(C\).</p>
+  </div>
+
+  <div class="step">
+    <div class="step-label">Step 2 — Apply Cauchy's Formula with \(f(z)=z^3\)</div>
+    <div class="math-line">
+      \[\oint_C \frac{z^3}{2z-1}\,dz = \frac{1}{2}\oint_C\frac{z^3}{z-\tfrac{1}{2}}\,dz = \frac{1}{2}\cdot 2\pi i\cdot f\!\left(\tfrac{1}{2}\right)\]
+    </div>
+    <div class="math-line">
+      \[= \pi i\cdot\left(\frac{1}{2}\right)^{\!3} = \frac{\pi i}{8}\]
+    </div>
+  </div>
+
+  <div class="ans-box">
+    <div class="ans-label">Answer</div>
+    \[\oint_C \frac{z^3}{2z-1}\,dz = \frac{\pi i}{8}\]
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════ Q4 ════ -->
+<div class="q-block">
+  <div class="q-header">
+    <span class="q-num">Q4</span>
+    <div>
+      <div class="q-title">Differential Equations — Concept &amp; Applications &nbsp;<span class="tag">Theory</span></div>
+    </div>
+  </div>
+
+  <p><strong>Definition.</strong> A differential equation (DE) is an equation relating a function to its derivatives. If the unknown function depends on one variable, it is an <em>ordinary differential equation</em> (ODE); if on several variables, a <em>partial differential equation</em> (PDE). The <em>order</em> is the highest derivative present; the <em>degree</em> is the power of that highest-order derivative.</p>
+
+  <p><strong>General form (1st-order, 1st-degree ODE):</strong></p>
+  <div class="math-line">\[\frac{dy}{dx} = f(x,\,y)\]</div>
+
+  <p><strong>Key types and examples:</strong></p>
+  <div class="sub-block">
+    <div class="sub-title">Separable &nbsp;·&nbsp; \(\dfrac{dy}{dx}=g(x)h(y)\)</div>
+    <p>Example: \(\dfrac{dy}{dx}=xy\) → Separating: \(\dfrac{dy}{y}=x\,dx\) → \(y=Ce^{x^2/2}\).</p>
+  </div>
+  <div class="sub-block">
+    <div class="sub-title">Linear First-Order &nbsp;·&nbsp; \(\dfrac{dy}{dx}+P(x)y=Q(x)\)</div>
+    <p>Solved with integrating factor \(\mu=e^{\int P\,dx}\). Example: RC circuit discharge: \(R\,\dfrac{dq}{dt}+\dfrac{q}{C}=0\).</p>
+  </div>
+  <div class="sub-block">
+    <div class="sub-title">Second-Order Linear &nbsp;·&nbsp; \(ay''+by'+cy=f(x)\)</div>
+    <p>Example: simple harmonic oscillator \(m\ddot{x}+kx=0\) → \(x=A\cos\omega t+B\sin\omega t\).</p>
+  </div>
+
+  <p><strong>Applications in ECE / EE / CE:</strong></p>
+  <ul style="margin-left:1.4rem; margin-top:0.5rem">
+    <li><em>Electrical Engineering:</em> RL, RC, RLC circuit analysis — voltage/current transients.</li>
+    <li><em>Electronics:</em> transistor small-signal models, phase-locked loop dynamics.</li>
+    <li><em>Civil Engineering:</em> beam deflection \(EI\,y''=M(x)\), soil settlement models.</li>
+    <li><em>Control &amp; Communication:</em> system transfer functions, signal processing filters.</li>
+    <li><em>Computer Engineering:</em> numerical methods for solving DEs (Euler, Runge–Kutta) underlie simulation tools (SPICE, MATLAB/Simulink).</li>
+  </ul>
+</div>
+
+<!-- ════════════════════════════════════════════ Q5 ════ -->
+<div class="q-block">
+  <div class="q-header">
+    <span class="q-num">Q5</span>
+    <div>
+      <div class="q-title">Solving ODEs &nbsp;<span class="tag">Three Parts</span></div>
+    </div>
+  </div>
+
+  <!-- Part (i) -->
+  <div class="sub-block">
+    <div class="sub-title">(i) &nbsp; \(x(1-x^2)\,\dfrac{dy}{dx}+(2x^2-1)y=ax^3\)</div>
+
+    <div class="step">
+      <div class="step-label">Rewrite as Standard Linear Form</div>
+      <div class="math-line">
+        \[\frac{dy}{dx}+\underbrace{\frac{2x^2-1}{x(1-x^2)}}_{P(x)}\,y = \underbrace{\frac{ax^2}{1-x^2}}_{Q(x)}\]
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-label">Partial Fractions for P(x)</div>
+      <p>Write \(\dfrac{2x^2-1}{x(1-x)(1+x)}=\dfrac{A}{x}+\dfrac{B}{1-x}+\dfrac{C}{1+x}\).</p>
+      <p>Setting \(x=0: A=-1\); \(x=1: B=\tfrac{1}{2}\); \(x=-1: C=-\tfrac{1}{2}\).</p>
+    </div>
+
+    <div class="step">
+      <div class="step-label">Integrating Factor</div>
+      <div class="math-line">
+        \[\int P\,dx = -\ln x -\tfrac{1}{2}\ln(1-x)-\tfrac{1}{2}\ln(1+x) = -\ln x - \tfrac{1}{2}\ln(1-x^2)\]
+      </div>
+      <div class="math-line">
+        \[\mu = \frac{1}{x\sqrt{1-x^2}}\]
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-label">Integrate</div>
+      <div class="math-line">
+        \[\mu\cdot Q = \frac{ax^2}{1-x^2}\cdot\frac{1}{x\sqrt{1-x^2}} = \frac{ax}{(1-x^2)^{3/2}}\]
+      </div>
+      <p>Let \(u=1-x^2\), \(du=-2x\,dx\):</p>
+      <div class="math-line">
+        \[\int \frac{ax}{(1-x^2)^{3/2}}\,dx = -\frac{a}{2}\int u^{-3/2}\,du = \frac{a}{\sqrt{1-x^2}}+C\]
+      </div>
+    </div>
+
+    <div class="ans-box">
+      <div class="ans-label">General Solution</div>
+      \[\frac{y}{x\sqrt{1-x^2}} = \frac{a}{\sqrt{1-x^2}}+C \quad\Longrightarrow\quad \boxed{y = ax + Cx\sqrt{1-x^2}}\]
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- Part (ii) -->
+  <div class="sub-block">
+    <div class="sub-title">(ii) &nbsp; \((x^2-x)\,\dfrac{dy}{dx}-(2x^2-1)y = x^5-2x^3+x\)</div>
+
+    <div class="step">
+      <div class="step-label">Standard Linear Form (divide by \(x^2-x\))</div>
+      <div class="math-line">
+        \[\frac{dy}{dx}-\frac{2x^2-1}{x(x-1)}\,y = \frac{x(x^2-1)^2}{x(x-1)} = (x-1)(x+1)^2\]
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-label">Partial Fractions for \(\dfrac{2x^2-1}{x(x-1)}\)</div>
+      <p>Polynomial division: \(\dfrac{2x^2-1}{x(x-1)}= 2+\dfrac{2x-1}{x(x-1)}= 2+\dfrac{1}{x}+\dfrac{1}{x-1}\).</p>
+    </div>
+
+    <div class="step">
+      <div class="step-label">Integrating Factor</div>
+      <div class="math-line">
+        \[\int -\!\left(2+\frac{1}{x}+\frac{1}{x-1}\right)dx = -2x-\ln x -\ln(x-1)\]
+      </div>
+      <div class="math-line">
+        \[\mu = \frac{e^{-2x}}{x(x-1)}\]
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-label">Homogeneous (Complementary) Solution</div>
+      <div class="math-line">
+        \[y_c = C\,x(x-1)e^{2x}\]
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-label">Particular Integral via Variation of Parameters</div>
+      <p>Set \(y=v\cdot x(x-1)e^{2x}\). Substituting gives:</p>
+      <div class="math-line">
+        \[v' = \frac{(x+1)^2 e^{-2x}}{x} = \left(x+2+\frac{1}{x}\right)e^{-2x}\]
+      </div>
+      <p>Integrating term-by-term:</p>
+      <div class="math-line">
+        \[\int xe^{-2x}dx = -\frac{e^{-2x}(2x+1)}{4}, \qquad \int 2e^{-2x}dx = -e^{-2x}\]
+      </div>
+      <div class="math-line">
+        \[\int\frac{e^{-2x}}{x}dx = \operatorname{Ei}(-2x) \quad\text{(Exponential Integral)}\]
+      </div>
+    </div>
+
+    <div class="ans-box">
+      <div class="ans-label">General Solution</div>
+      \[y = x(x-1)e^{2x}\!\left[-\frac{(2x+5)}{4}\,e^{-2x}+\operatorname{Ei}(-2x)+C\right]\]
+      <p style="font-size:0.88rem;margin-top:0.5rem;color:#555">where \(\operatorname{Ei}(-2x)=-\!\displaystyle\int_{2x}^{\infty}\frac{e^{-t}}{t}\,dt\) is the standard Exponential Integral.</p>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- Part (iii) -->
+  <div class="sub-block">
+    <div class="sub-title">(iii) &nbsp; \((1+y^2)\,dx = (\tan^{-1}y - x)\,dy\)</div>
+
+    <div class="step">
+      <div class="step-label">Treat x as a Function of y</div>
+      <div class="math-line">
+        \[\frac{dx}{dy}+\frac{x}{1+y^2} = \frac{\tan^{-1}y}{1+y^2}\]
+      </div>
+      <p>This is linear in \(x\) with \(P=\dfrac{1}{1+y^2}\), \(Q=\dfrac{\tan^{-1}y}{1+y^2}\).</p>
+    </div>
+
+    <div class="step">
+      <div class="step-label">Integrating Factor</div>
+      <div class="math-line">
+        \[\mu = e^{\int \frac{dy}{1+y^2}} = e^{\tan^{-1}y}\]
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-label">Integrate Both Sides</div>
+      <div class="math-line">
+        \[\frac{d}{dy}\!\left[x\,e^{\tan^{-1}y}\right] = \frac{\tan^{-1}y}{1+y^2}\,e^{\tan^{-1}y}\]
+      </div>
+      <p>Substitute \(t=\tan^{-1}y\), \(dt=\dfrac{dy}{1+y^2}\):</p>
+      <div class="math-line">
+        \[\int t\,e^t\,dt = (t-1)e^t+C = (\tan^{-1}y-1)\,e^{\tan^{-1}y}+C\]
+      </div>
+    </div>
+
+    <div class="ans-box">
+      <div class="ans-label">General Solution</div>
+      \[x\,e^{\tan^{-1}y} = (\tan^{-1}y-1)\,e^{\tan^{-1}y}+C\]
+      \[\boxed{x = \tan^{-1}y - 1 + C\,e^{-\tan^{-1}y}}\]
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════ Q6 ════ -->
+<div class="q-block">
+  <div class="q-header">
+    <span class="q-num">Q6</span>
+    <div>
+      <div class="q-title">General &amp; Singular Solutions &nbsp;<span class="tag">Clairaut-type</span></div>
+      <div class="q-stmt">Obtain general and singular solutions of \(y = px+\sqrt{p^2x^2+b^2}\), where \(p=\dfrac{dy}{dx}\).</div>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-label">Step 1 — Eliminate the Square Root</div>
+    <p>Rearrange: \(y-px = \sqrt{p^2x^2+b^2}\). Square both sides:</p>
+    <div class="math-line">
+      \[(y-px)^2 = p^2x^2+b^2 \;\Longrightarrow\; y^2-2pxy+p^2x^2 = p^2x^2+b^2\]
+    </div>
+    <div class="math-line">
+      \[y^2 - 2pxy = b^2 \quad\Longrightarrow\quad p = \frac{y^2-b^2}{2xy}\]
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-label">Step 2 — Reduce to a Separable ODE</div>
+    <p>Use the homogeneous substitution \(y=vx\), so \(p=v+xv'\):</p>
+    <div class="math-line">
+      \[x\frac{d(y^2)}{dx} = y^2 - b^2\]
+    </div>
+    <p>Let \(w=y^2\):</p>
+    <div class="math-line">
+      \[\frac{dw}{w-b^2} = \frac{dx}{x} \;\Longrightarrow\; \ln|w-b^2| = \ln|x|+\ln|C|\]
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-label">Step 3 — General Solution</div>
+    <div class="math-line green">
+      \[y^2 = Cx + b^2\]
+    </div>
+    <p>Verify: with \(y^2=Cx+b^2\), we get \(p=\dfrac{C}{2y}\). Then</p>
+    <div class="math-line">
+      \[px+\sqrt{p^2x^2+b^2} = \frac{Cx}{2y}+\frac{y^2+b^2}{2y} = \frac{Cx+y^2+b^2}{2y} = \frac{2y^2}{2y} = y\;\checkmark\]
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-label">Step 4 — Singular Solution (Envelope)</div>
+    <p>The envelope of the family \(y^2=Cx+b^2\) is found by eliminating \(C\). Differentiate with respect to \(C\):</p>
+    <div class="math-line">
+      \[\frac{\partial}{\partial C}(y^2-Cx-b^2)=0 \;\Longrightarrow\; x=0\]
+    </div>
+    <p>Substituting \(x=0\) back: \(y^2=b^2\), so \(y=\pm b\).</p>
+    <p><strong>Check \(y=b\):</strong> \(p=0\), so \(px+\sqrt{p^2x^2+b^2}=b=y\). <span class="check">✔</span></p>
+    <p><strong>Check \(y=-b\):</strong> \(px+\sqrt{p^2x^2+b^2}=b\neq -b\). <span class="cross">✘</span></p>
+  </div>
+
+  <div class="ans-box">
+    <div class="ans-label">Answers</div>
+    <p><strong>General solution:</strong> \(y^2 = Cx + b^2\) &emsp;(family of parabolas)</p>
+    <p style="margin-top:0.5rem"><strong>Singular solution:</strong> \(y = b\) &emsp;(tangent to all parabolas at \(x=0\))</p>
+  </div>
+</div>
+
+</body>
+</html>
