@@ -1,0 +1,28 @@
+For : Build a Caesar Cipher (Python/build_a_caesar_cipher.py)
+    We created a program that implements a Caesar cipher, 
+    an encryption method that shifts letters in the alphabet to encode messages.
+
+For : Build an Employee Profile Validator (Python/employee_valid.py)
+    We practiced working with Python's string methods.
+
+For : Build a Bill Splitter (Python/bill_splitter.py)
+    We practiced working with numbers and mathematical operations to build a bill splitter. 
+    This tool will calculate how much each person owes after adding meal costs and a tip.    
+
+For : Build a Movie Ticket Booking Calculator (Python/movie_ticket_booking_counter.py)
+    We practiced how to use booleans and conditional statements in Python 
+    by building a movie ticket booking calculator.
+
+For : Build a Travel Weather Planner (Python/build_a_travel_weather_planner.py)
+    We use conditional statements to determine whether commuting is possible based on the weather, 
+    the distance to travel, and the availability of a vehicle.
+
+For : Build a Kitchen Inventory Tracker (Python/workshop-kitchen-inventory-tracker.py)
+    We practice writing reusable Python functions and 
+    applying local and global scope to build a kitchen inventory tracker.    
+
+For : Build a Apply Discount Function (Python/build_an_apply_discount_function.py)
+    We wrote a function that calculates the final price of an item after applying a percentage discount.    
+
+For : Build an RPG Character (Python/build_an_RPG_character.py)
+    We practiced the basics of Python by building a small app that creates a character for an RPG adventure.
